@@ -1,7 +1,7 @@
 {
   "name": "reg-z-apr",
   "version": "1.0.0",
-  "description": "US Truth in Lending APR — the Regulation Z (12 CFR 1026) Appendix J actuarial method: general-equation solver, odd-days fractions, multiple advances, Reg Z accuracy tolerance. Zero dependencies.",
+  "description": "US Truth in Lending APR — the Regulation Z (12 CFR 1026) Appendix J actuarial method: general-equation solver, date-to-unit-period rules, odd-days fractions, multiple advances, Reg Z accuracy tolerance. Verified against every Appendix J worked example. Zero dependencies.",
   "keywords": ["apr", "regulation-z", "truth-in-lending", "tila", "appendix-j", "actuarial", "consumer-credit", "lending", "loan", "disclosure", "finance"],
   "homepage": "https://moshemalka.com",
   "repository": { "type": "git", "url": "git+https://github.com/moshejs/reg-z-apr.git" },
@@ -11,8 +11,14 @@
   "type": "module",
   "main": "./dist/index.cjs",
   "module": "./dist/index.js",
-  "types": "./dist/index.d.ts",
-  "exports": { ".": { "types": "./dist/index.d.ts", "import": "./dist/index.js", "require": "./dist/index.cjs" } },
+  "types": "./dist/index.d.cts",
+  "exports": {
+    ".": {
+      "import": { "types": "./dist/index.d.ts", "default": "./dist/index.js" },
+      "require": { "types": "./dist/index.d.cts", "default": "./dist/index.cjs" }
+    },
+    "./package.json": "./package.json"
+  },
   "files": ["dist"],
   "sideEffects": false,
   "scripts": {
