@@ -1,10 +1,25 @@
 {
   "name": "reg-z-apr",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "US Truth in Lending APR — the Regulation Z (12 CFR 1026) Appendix J actuarial method: general-equation solver, date-to-unit-period rules, odd-days fractions, multiple advances, Reg Z accuracy tolerance. Verified against every Appendix J worked example. Zero dependencies.",
-  "keywords": ["apr", "regulation-z", "truth-in-lending", "tila", "appendix-j", "actuarial", "consumer-credit", "lending", "loan", "disclosure", "finance"],
+  "keywords": [
+    "apr",
+    "regulation-z",
+    "truth-in-lending",
+    "tila",
+    "appendix-j",
+    "actuarial",
+    "consumer-credit",
+    "lending",
+    "loan",
+    "disclosure",
+    "finance"
+  ],
   "homepage": "https://moshemalka.com",
-  "repository": { "type": "git", "url": "git+https://github.com/moshejs/reg-z-apr.git" },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/moshejs/reg-z-apr.git"
+  },
   "bugs": "https://github.com/moshejs/reg-z-apr/issues",
   "author": "Moshe Malka <hello@moshemalka.com> (https://moshemalka.com)",
   "license": "MIT",
@@ -14,12 +29,20 @@
   "types": "./dist/index.d.cts",
   "exports": {
     ".": {
-      "import": { "types": "./dist/index.d.ts", "default": "./dist/index.js" },
-      "require": { "types": "./dist/index.d.cts", "default": "./dist/index.cjs" }
+      "import": {
+        "types": "./dist/index.d.ts",
+        "default": "./dist/index.js"
+      },
+      "require": {
+        "types": "./dist/index.d.cts",
+        "default": "./dist/index.cjs"
+      }
     },
     "./package.json": "./package.json"
   },
-  "files": ["dist"],
+  "files": [
+    "dist"
+  ],
   "sideEffects": false,
   "scripts": {
     "build": "tsup src/index.ts --format esm,cjs --dts --clean",
@@ -27,6 +50,12 @@
     "typecheck": "tsc --noEmit",
     "prepublishOnly": "npm run typecheck && npm run test && npm run build"
   },
-  "devDependencies": { "tsup": "^8.5.0", "typescript": "^5.8.0", "vitest": "^3.2.0" },
-  "engines": { "node": ">=18" }
+  "devDependencies": {
+    "tsup": "^8.5.0",
+    "typescript": "^5.8.0",
+    "vitest": "^3.2.0"
+  },
+  "engines": {
+    "node": ">=18"
+  }
 }
